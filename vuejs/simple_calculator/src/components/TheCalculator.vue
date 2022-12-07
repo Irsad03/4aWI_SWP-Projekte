@@ -4,12 +4,12 @@
           <h1>Simple Calculator</h1>
           <input v-model="aktuellerWert"/>
           <div class="row">
-              <simple-button class="btn" beschriftung="+" @calculate="calculate"></simple-button>
-              <simple-button class="btn" beschriftung="-" @calculate="calculate"></simple-button>
-              <simple-button class="btn" beschriftung="*" @calculate="calculate"></simple-button>
-              <simple-button class="btn" beschriftung="/" @calculate="calculate"></simple-button>
+              <simple-button class="btn" operator="+" @calculate="calculate"></simple-button>
+              <simple-button class="btn" operator="-" @calculate="calculate"></simple-button>
+              <simple-button class="btn" operator="*" @calculate="calculate"></simple-button>
+              <simple-button class="btn" operator="/" @calculate="calculate"></simple-button>
           </div>
-          <simple-button id="large" class="btn" beschriftung="=" @calculate="calculate"></simple-button>
+          <simple-button id="large" class="btn" operator="=" @calculate="calculate"></simple-button>
      </div>
   </div>
 </template>
@@ -30,12 +30,12 @@ export default {
       }
   },
   methods: { /*hier hat michael blessing ein klein wenig geholfen*/
-      calculate(beschriftung) {
-          if(beschriftung === "+" | beschriftung === "-" | beschriftung === "*" | beschriftung === "/") {
+      calculate(operator) {
+          if(operator === "+" | operator === "-" | operator === "*" | operator === "/") {
               this.vorherierWert = parseInt(this.aktuellerWert);
               this.aktuellerWert = "";
-              this.vorherigerOperator = beschriftung;
-          } else if(beschriftung === "=") {
+              this.vorherigerOperator = operator;
+          } else if(operator === "=") {
               if(this.vorherigerOperator === "+") {
                   this.aktuellerWert = this.vorherierWert + parseInt(this.aktuellerWert);
               } else if(this.vorherigerOperator === "-") {
@@ -46,7 +46,7 @@ export default {
                   this.aktuellerWert = this.vorherierWert / parseInt(this.aktuellerWert);
               }
           } else {
-              console.log("Falsche Beschriftung");
+              console.log("Falsche operator");
           }
       }
   }
