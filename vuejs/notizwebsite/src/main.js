@@ -1,0 +1,16 @@
+import { createApp } from 'vue'
+import App from './App.vue'
+
+
+// Import the functions you need from the SDKs you need
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+
+
+// Initialize Firebase
+
+
+createApp(App).mount('#app')
