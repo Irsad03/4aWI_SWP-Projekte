@@ -1,6 +1,6 @@
 <template>
-  <div ckass>
-    <div>
+  <div class="wrapper">
+    <div class="main">
       <h1>Notizen</h1>
       <NoteInput @add-note="addNote" />
       <NoteList :notes="notes" @remove-note="removeNote" />
@@ -71,3 +71,33 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.wrapper {
+      padding:0px;
+      margin:0px;
+      height:100vh;
+      width:100vw;
+      display:flex;
+      flex-direction:column;
+      align-items: center;
+      background-color:#000000;
+}
+
+  
+  .main {
+      width: 80vw;
+      padding:20px;
+  }
+
+  .main > h1 {
+      text-align: center;
+      font-weight: 600;
+      font-size:3em;
+      color: rgb(0, 153, 236);
+      
+  }
+
+
+
+</style>
